@@ -1,3 +1,29 @@
 page-home {
+    .header-banner {
+        height: 250px;
+        min-height: 250px;
+    }
+    .slide-zoom {
+        // height:200px;
+        height: 100%;
+        // overflow:hidden;
+    }
+    .slider-text {
+        font-size: 13px
+    }
+    ion-slides {
+        height: 250px;
+    }
+    ion-icon {
+        font-size: 5em;
+    }
+}
 
+@import url(https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese);
+.text-1 {
+    font-family: Roboto;
+}
+
+p.date_text {
+    font-size: 12px
 }

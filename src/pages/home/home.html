@@ -1,18 +1,71 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+        <ion-buttons end>
+            <button ion-button icon-only>
+        <ion-icon ios="ios-home" md="md-home"></ion-icon>
+    </button>
+        </ion-buttons>
+        <ion-title>Divis</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content padding class="mainBG">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-slides loop="true" autoplay="3000" pager>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        <ion-slide *ngFor="let number of [1,2,3,4]">
+            <img src="./assets/imgs/{{number}}.jpg" />
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="settings"></ion-icon>
+                    <h3>Agricon Services</h3>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="basket"></ion-icon>
+                    <h3>Farmer's Market</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="sunny"></ion-icon>
+                    <h3>Weather Forecast</h3>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="school"></ion-icon>
+                    <h3>Farming School</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="book"></ion-icon>
+                    <h3>Farmers Magazine</h3>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card text-center padding color="primary">
+                    <ion-icon name="link"></ion-icon>
+                    <h3>Farmers Connect</h3>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

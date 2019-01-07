@@ -1,0 +1,13 @@
+.ios .header-image,
+.md .header-image {
+  background-image: url("../assets/imgs/logo.jpg");
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.mainBG {
+  background-image: url("../assets/imgs/main-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
