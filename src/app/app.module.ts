@@ -1,15 +1,14 @@
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HomeWeatherPage } from '../pages/home-weather/home-weather';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { ServicesPage } from '../pages/services/services';
 import { AccountPage } from '../pages/account/account';
-import { NewsdetailPage } from '../pages/newsdetail/newsdetail';
-import { ServicesdetailPage } from '../pages/servicesdetail/servicesdetail';
 
 import { LoginPage }  from '../pages/login/login';
 import { SignupPage }  from '../pages/signup/signup';
@@ -35,6 +34,7 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { MomentModule } from 'angular2-moment';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherProvider } from '../providers/weather/weather';
 
 @NgModule({
   declarations: [
@@ -42,14 +42,12 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPage,
     SignupPage,
     HomePage,
+    HomeWeatherPage,
     AboutPage,
-    NewsdetailPage,
-    ServicesdetailPage,
     ContactPage,
-    ServicesPage,
     HomePage,
-    AccountPage,
-    ParallaxHeaderDirective
+    ParallaxHeaderDirective,
+    AccountPage
   ],
   imports: [
     HttpClientModule,
@@ -62,7 +60,6 @@ import { HttpClientModule } from '@angular/common/http';
         { component: HomePage, name: 'HomePage', segment: 'home' },
         { component: ContactPage, name: 'ContactPage', segment: 'contact' },
         { component: AboutPage, name: 'AboutPage', segment: 'about' },
-        { component: ServicesPage, name: 'ServicesPage', segment: 'services' },
         { component: LoginPage, name: 'LoginPage', segment: 'login' },
         { component: AccountPage, name: 'AccountPage', segment: 'account' },
         { component: SignupPage, name: 'SignupPage', segment: 'signup' }
@@ -76,18 +73,17 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
+    HomeWeatherPage,
     LoginPage,
     SignupPage,
     AboutPage,
-    NewsdetailPage,
-    ServicesdetailPage,
     ContactPage,
-    ServicesPage,
     AccountPage,
     HomePage
   ],
   providers: [
     StatusBar,
+    Keyboard,
     AuthServiceProvider,
     Network,
     NetworkConnProvider,
@@ -98,7 +94,8 @@ import { HttpClientModule } from '@angular/common/http';
     ServicesDataProvider,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    WeatherProvider
   ]
 })
 export class AppModule {}

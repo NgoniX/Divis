@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, ToastController, Platform } from 'ionic-angular';
-import { NewsdetailPage } from '../newsdetail/newsdetail';
+import { AboutPage } from '../about/about';
+import { HomeWeatherPage } from './../home-weather/home-weather';
 import { Network } from '@ionic-native/network';
 import { Subscription} from 'rxjs/Subscription';
 
@@ -61,14 +62,12 @@ export class HomePage {
   }
   
   // go to news detail
-  newsDetail(newsData: any) {
-    // go to the book detail page
-    // and pass in the book data
-    this.navCtrl.push(NewsdetailPage, {
-      title: newsData.title,
-      news: newsData
-    });
-  }
+  // newsDetail(newsData: any) {
+  //   this.navCtrl.push(AboutPage, {
+  //     title: newsData.title,
+  //     news: newsData
+  //   });
+  // }
 
 
    //network status
@@ -80,7 +79,9 @@ export class HomePage {
   }).present();
   }
 
-
+  goToWeather() {
+    this.navCtrl.push(HomeWeatherPage);
+  }
 
 
 }
